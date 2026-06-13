@@ -1,0 +1,24 @@
+{
+  "name": "lichttechnik-verleih-backend",
+  "version": "1.0.0",
+  "description": "Backend für den Lichttechnik-Verleih (Node.js &amp; Express)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s0564632/lichttechnik-verleih-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/s0564632/lichttechnik-verleih-backend/issues"
+  },
+  "homepage": "https://github.com/s0564632/lichttechnik-verleih-backend#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
