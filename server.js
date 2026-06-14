@@ -1,10 +1,19 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
 const PORT = 3000;
 
-// Test-Route für den Browser
+app.use(express.json()); // Middleware zum Parsen von JSON
+
+// MongoDB-Verbindung
+mongoose.connect('mongodb://localhost:27017/lichttechnik') 
+    .then(() => console.log('MongoDB verbunden'))
+    .catch(err => console.error('MongoDB-Verbindungsfehler:', err));
+
+
+// Routen
 app.get('/', (req, res) => {
-    res.send('Der Lichttechnik-Server läuft!');
+    res.send('Der Lichttechnik-Server läuft und die Datenbank ist bereit!');
 });
 
 // Server starten
