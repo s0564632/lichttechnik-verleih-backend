@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const app = express();
 const PORT = 3000;
 
+const equipmentRoutes = require('./routes/equipment');
+
 app.use(express.json()); // Middleware zum Parsen von JSON
 
 // MongoDB-Verbindung
@@ -12,6 +14,7 @@ mongoose.connect('mongodb://localhost:27017/lichttechnik')
 
 
 // Routen
+app.use('/api/equipment', equipmentRoutes);
 app.get('/', (req, res) => {
     res.send('Der Lichttechnik-Server läuft und die Datenbank ist bereit!');
 });
