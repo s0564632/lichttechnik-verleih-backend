@@ -1,0 +1,52 @@
+name,category,lengthValue,lengthUnit,quantity,priceDay,description
+Botex 4 kanal Dimmer,Licht Zubehör,,m,8,35,Vierkanal-Dimmerpack für die Steuerung von Beleuchtungssystemen. Ideal für kleine Bühnen und Events.
+12 Kanal 24 V Dimmer,Licht Zubehör,,m,6,60,"Zwölfkanal-Dimmerpack mit 24V-Ausgang, geeignet für Niedervolt-Beleuchtung."
+Dia Projektor,Scheinwerfer,,m,15,34,Klassischer Dia-Projektor für Präsentationen und künstlerische Anwendungen.
+Par 64,Scheinwerfer,,m,15,44,Robuster Allzweck-Scheinwerfer für Bühnenbeleuchtung. Erzeugt einen intensiven Lichtstrahl.
+Par 56,,,m,10,22,"Kompakter Scheinwerfer, oft für Akzentbeleuchtung und farbige Effekte verwendet."
+LED Baustrahler,Scheinwerfer,,m,50,22,Leistungsstarker LED-Strahler für die Ausleuchtung von Arbeitsbereichen und Events. Energieeffizient und langlebig.
+DMX Splitter,Licht Zubehör,,m,2,24,"Verteilt ein DMX-Signal auf mehrere Ausgänge, um komplexe Lichtanlagen zu steuern."
+Fun Gneration Pico Spot,Scheinwerfer,,m,20,42,Kompakter LED-Spot mit RGBW-Farbmischung für farbenfrohe Akzente.
+Captain D Nebelmaschine,Licht / Nebel,,m,1,24,Erzeugt dichten Nebel für atmosphärische Effekte und zur Visualisierung von Lichtstrahlen.
+Stairville Nebel,Licht / Nebel,,m,1,24,Professionelle Nebelmaschine für große Bühnen und Events.
+32 A Dimmer 12 Kanal,Licht / Zubehör,,m,1,24,"Hochleistungsdimmer für die Steuerung von bis zu 12 Kanälen, geeignet für anspruchsvolle Beleuchtungsaufgaben."
+Stairville Decker,Scheinwerfer Led,,m,2,42,LED-Bar mit mehreren Strahlern für dynamische Lichteffekte und Wash-Beleuchtung.
+Outdoor Led Schwarzlicht,Scheinwerfer / Led,,m,2,4,Wetterfestes LED-Schwarzlicht für fluoreszierende Effekte im Außenbereich.
+Cameo Laser 1Watt,Scheinwerfer lLaser,,m,1,13,1-Watt-Laser für beeindruckende Lasereffekte. Achtung: Sicherheitshinweise beachten!
+Quant Laser 4watt,Scheinwerfer / Laser,,m,1,14,Leistungsstarker 4-Watt-Laser für professionelle Lasershows. Achtung: Sicherheitshinweise beachten!
+Gastro Tiefkühltruhe,Zubehör,,m,1,15,Tiefkühltruhe für die Lagerung von Lebensmitteln und Getränken bei Events.
+ESP 32,Zubehör/ Pixelstribe,,m,20,16,Mikrocontroller zur Ansteuerung von Pixelstreifen für individuelle Lichteffekte.
+Profil Scheinwerfer 1 KW,Scheinwerfer,,m,8,17,"Profilscheinwerfer mit hoher Lichtleistung und präziser Abbildung, ideal für Theater und Bühne."
+Kronleuchter,Scheinwerfer / Klimbims,,m,20,18,Dekorativer Kronleuchter für festliche Anlässe und Events.
+Nudelsiebe,Scheinwerfer selbst gebastelt,,m,14,19,"Kreative, selbstgebaute Lichtlösung mit einzigartigem Charakter."
+Salatschüsseln,Scheinwerfer / selbst gebastelt,,m,25,20,"Originelle, selbstgebaute Lichtlösung, die eine besondere Atmosphäre schafft."
+Netzteile 24V 200 Watt,Zubehör,,m,6,21,"Netzteil zur Stromversorgung von 24V-Geräten, z.B. LED-Streifen."
+Netzteile 5V 50 Watt,Zubehör,,m,16,22,"Netzteil zur Stromversorgung von 5V-Geräten, z.B. Mikrocontrollern."
+Dmx Kabel 3 Pol,Kabel,5,m,50,23,"DMX-Kabel, 3-polig, 5 Meter Länge, zur Verbindung von Lichtsteuergeräten."
+Dmx Kabel 3 Pol,Kabel,10,m,50,24,"DMX-Kabel, 3-polig, 10 Meter Länge, zur Verbindung von Lichtsteuergeräten."
+Dmx Kabel 3 Pol,Kabel,3,m,30,25,"DMX-Kabel, 3-polig, 3 Meter Länge, zur Verbindung von Lichtsteuergeräten."
+3er Verteiler Indoor,Kabel,,m,100,26,3-fach-Verteiler für den Innenbereich.
+Schuko Kabel,Kabel,5,m,100,27,"Schuko-Kabel, 5 Meter Länge, für die Stromversorgung von Geräten."
+Schuko Kabel,Kabel,10,m,100,28,"Schuko-Kabel, 10 Meter Länge, für die Stromversorgung von Geräten."
+Schuko Kabel,Kabel,3,m,50,29,"Schuko-Kabel, 3 Meter Länge, für die Stromversorgung von Geräten."
+Chamsys Pc Wing,Lichtpult Controller,,m,1,30,Kompaktes DMX-Pult für die Lichtsteuerung über PC.
+Enntec Dmx Pro,Lichtpult Controller,,m,1,31,Professionelles DMX-Interface für die Ansteuerung von Lichtanlagen.
+Enttec Usb Dmx,Lichtpult Controller,,m,1,32,Einfaches USB-DMX-Interface für die Lichtsteuerung über PC.
+Enttec Artnet Dmx,Lichtpult Controller,,m,1,33,DMX-Interface für die Ansteuerung von Lichtanlagen über Art-Net.
+Schownet Laser Controller,Lichtpult Controller,,m,1,34,Controller zur Steuerung von Lasershows.
+Laptot,Lichtpult Controller,,m,1,35,Laptop zur Steuerung von Licht- und Lasershows.
+Bildschirm 19 Zoll,Zubehör,,m,4,36,19-Zoll-Monitor zur Anzeige von Steuerungsinformationen.
+"Led bar 1,5m",Led Scheinwerfer,,m,2,37,"1,5 Meter lange LED-Bar für die Ausleuchtung von Flächen und Bühnen."
+Led Bar 1m ,Led Scheinwerfer,,m,2,38,1 Meter lange LED-Bar für die Ausleuchtung von Flächen und Bühnen.
+Stairville Movingbar,Led Scheinwerfer,,m,1,39,Bewegliche LED-Bar für dynamische Lichteffekte.
+Cameo Colorbeam,Led Scheinwerfer,,m,6,40,LED-Scheinwerfer mit engem Abstrahlwinkel für farbige Lichtstrahlen.
+Sunstribes,Scheinwerfer,,m,4,41,Scheinwerfer für die Erzeugung von Sonnenstrahlen-Effekten.
+1 Kw Stufenlinse,Scheinwerfer,,m,2,42,Stufenlinsen-Scheinwerfer mit 1 kW Leistung für eine weiche Ausleuchtung.
+Baustrahler Halogen,Scheinwerfer,,m,50,43,Halogen-Baustrahler mit 5m Kabel.
+Led Verlängerung,Zubehör,5,m,10,44,5m Verlängerungskabel für LED-Geräte
+Led Verlängerung,Zubehör,10,m,10,45,10m Verlängerungskabel für LED-Geräte
+Led Verlängerung,Zubehör,3,m,20,46,3m Verlängerungskabel für LED-Geräte
+1m Pixelstribe mit Anschluss,Zubehör,1,m,16,47,1m langer Pixelstreifen mit Anschlusskabel zur Erzeugung von dynamischen Lichteffekten
+Seifenblasenmaschine,Zubehör,,m,1,48,Maschine zur Erzeugung von Seifenblasen
+Dmx Adapter 5 Pol zu 3 Pol/ Ring,Zubehör,,m,20,49,Adapter zur Anpassung von DMX-Kabeln (5-polig auf 3-polig)
+Glühbirnen mit FassungenOutdoor,Zubehör,,m,20,50,Glühbirnen mit Fassungen für den Außenbereich
