@@ -43,6 +43,27 @@ Der Meilenstein zur Bereitstellung der reibungslosen Dateninfrastruktur und der 
 **Problem:** Standardmäßig puffert der Mongoose-ODM sämtliche Datenbankoperationen intern (`bufferCommands: true`), sofern die physische Verbindung zur MongoDB-Instanz noch nicht vollständig etabliert ist. Bei Konnektivitätsstörungen führte dies zu einem unendlichen Einfrieren eingehender API-Anfragen, anstatt eine zeitnahe Fehler-Response (Timeout) zu triggern.
 **Lösung:** Globale Deaktivierung des Pufferungsmechanismus innerhalb der `server.js` mittels `mongoose.set('bufferCommands', false);`. Datenbankzugriffe schlagen bei fehlender Instanzverbindung nun deterministisch fehl und erlauben eine transparente Fehlersignalisierung an das Gesamtsystem.
 
+### 6. System- und MongoDB-Updates unter Debian Trixie (Kryptografie-Konflikt)
+**Problem:** Bei regulären System-Updates (`apt update`) blockiert das moderne Validierungs-Tool `sqv` unter Debian Trixie das MongoDB-7.0-Repository. Grund dafür ist, dass MongoDB die Zertifikate für Bookworm intern noch mit dem veralteten SHA1-Algorithmus signiert hat, welcher unter Trixie seit 2026 hart blockiert wird (`Policy rejected non-revocation signature`).
+**Lösung für den Alltag:** Um das Repository bei regulären System-Updates zu ignorieren und Warnungen zu vermeiden, wurde die Quelle temporär deaktiviert (auskommentiert):
+``
+sudo sed -i 's/^deb/# deb/' /etc/apt/sources.list.d/mongodb-org-7.0.list
+
+
+### 1.Quelle aktivieren und Vertrauen erzwingen:
+``` 
+sudo sh -c 'echo "deb [trusted=yes signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg] [http://repo.mongodb.org/apt/debian](http://repo.mongodb.org/apt/debian) bookworm/mongodb-org/7.0 main" > /etc/apt/sources.list.d/mongodb-org-7.0.list'
+```
+### 2.Updates einlesen und durchführen:
+```
+sudo apt update
+sudo apt upgrade mongodb-org
+```
+### 3.Quelle danach wieder deaktivieren (um zukünftige apt update-Durchläufe sauber zu halten):
+```
+sudo sed -i 's/^deb/# deb/' /etc/apt/sources.list.d/mongodb-org-7.0.list
+```
+
 ## Zukünftige Erweiterungen / Roadmap
 
 Die folgenden Implementierungsschritte sind für die kommenden Entwicklungszyklen im Backend geplant:
