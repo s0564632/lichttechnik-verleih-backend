@@ -35,6 +35,14 @@ Der Meilenstein zur Bereitstellung der reibungslosen Dateninfrastruktur und der 
 **Problem:** Beim ersten Integrationstest verweigerte das Angular-Frontend den Zugriff auf die REST-API. Der Browser blockierte die HTTP-Anfragen aufgrund der *Same-Origin-Policy*, da Frontend (Port 4200) und API-Server (Port 3000) auf unterschiedlichen logischen Ports operieren.
 **Lösung:** Das Backend wurde um das npm-Paket `cors` erweitert. Durch die globale Einbindung als Middleware (`app.use(cors())`) sendet der Express-Server nun die erforderlichen `Access-Control-Allow-Origin`-Header mit, wodurch der Datenaustausch legitimiert wird.
 
+### 4. TCP-Portblockade durch verwaiste Node.js-Hintergrundprozesse
+**Problem:** Nach unvollständigen Abbruchzyklen oder abrupten Neustarts blockierten verwaiste Node.js-Prozesse (Zombie-Prozesse) den TCP-Port 3000. Nachfolgende Instanziierungen des Express-Servers schlugen fehl oder asynchrone HTTP-Requests verharrten im Client ohne Fehlerrückmeldung permanent im Status *Pending*.
+**Lösung:** Terminierung der blockierenden Prozesse auf Betriebssystemebene durch den gezielten Einsatz des Befehls `sudo fuser -k 3000/tcp`, um die Netzwerkressource für den regulären Serverbetrieb zu befreien.
+
+### 5. Endloses Pufferungsverhalten bei ausstehendem Datenbank-Handshake
+**Problem:** Standardmäßig puffert der Mongoose-ODM sämtliche Datenbankoperationen intern (`bufferCommands: true`), sofern die physische Verbindung zur MongoDB-Instanz noch nicht vollständig etabliert ist. Bei Konnektivitätsstörungen führte dies zu einem unendlichen Einfrieren eingehender API-Anfragen, anstatt eine zeitnahe Fehler-Response (Timeout) zu triggern.
+**Lösung:** Globale Deaktivierung des Pufferungsmechanismus innerhalb der `server.js` mittels `mongoose.set('bufferCommands', false);`. Datenbankzugriffe schlagen bei fehlender Instanzverbindung nun deterministisch fehl und erlauben eine transparente Fehlersignalisierung an das Gesamtsystem.
+
 ## Zukünftige Erweiterungen / Roadmap
 
 Die folgenden Implementierungsschritte sind für die kommenden Entwicklungszyklen im Backend geplant:
