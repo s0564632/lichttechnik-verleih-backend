@@ -47,5 +47,18 @@ router.put('/:id', async (req, res) => {
     }
 }); 
 
+// DELETE /api/equipment/:id - Vorhandenen Equipment-Gegenstand löschen
+router.delete('/:id', async (req, res) => {
+    try {
+        const deletedEquipment = await Equipment.findByIdAndDelete(req.params.id);
+        if (!deletedEquipment) {
+            return res.status(404).json({ message: 'Ausrüstungsgegenstand nicht gefunden' });
+        }
+        res.json({ message: 'Ausrüstungsgegenstand erfolgreich gelöscht' });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
 module.exports = router;
 
