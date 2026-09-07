@@ -47,6 +47,32 @@ router.put('/:id', async (req, res) => {
     }
 }); 
 
+// PATCH /api/equipment/:id - Equiptment ausleihen
+router.patch('/:id/rent', async (req, res) => {
+    console.log('PATCH /:id/rent wurde aufgerufen');
+    try {
+const item = await Equipment.findById(req.params.id);
+        if (!item) {
+            return res.status(404).json({ message: 'Ausrüstungsgegenstand nicht gefunden' });
+        }
+
+        if(item.quantity <= 0) {
+            return res.status(400).json({ message: 'Die Menge des Ausrüstungsgegenstands ist bereits 0 oder kleiner' 
+            });
+
+    }
+
+    item.quantity -= 1;
+    
+    const updatedItem = await item.save();
+    
+    res.json(updatedItem);
+
+} catch (err) {
+    res.status(400).json({ message: err.message });
+}
+});
+
 // DELETE /api/equipment/:id - Vorhandenen Equipment-Gegenstand löschen
 router.delete('/:id', async (req, res) => {
     try {
