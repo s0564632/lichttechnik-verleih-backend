@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const app = express();
 const PORT = 3000;
 
 const equipmentRoutes = require('./routes/equipment');
 
+app.use(cors());
 app.use(express.json()); // Middleware zum Parsen von JSON
 
 // MongoDB-Verbindung
