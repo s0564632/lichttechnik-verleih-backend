@@ -23,4 +23,16 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+// POST /api/equipment - Neuen Equipment-Gegenstand erstellen
+router.post('/', async (req, res) => {
+    try {
+        const equipment = new Equipment(req.body);
+        const savedEquipment = await equipment.save();
+        res.status(201).json(savedEquipment);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+});
+
 module.exports = router;
+
