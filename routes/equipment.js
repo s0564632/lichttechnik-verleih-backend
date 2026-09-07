@@ -34,5 +34,18 @@ router.post('/', async (req, res) => {
     }
 });
 
+// PUT /api/equipment/:id - Vorhandenen Equipment-Gegenstand aktualisieren
+router.put('/:id', async (req, res) => {
+    try {
+        const updatedEquipment = await Equipment.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+        if (!updatedEquipment) {
+            return res.status(404).json({ message: 'Ausrüstungsgegenstand nicht gefunden' });
+        }
+        res.json(updatedEquipment);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+}); 
+
 module.exports = router;
 
