@@ -10,7 +10,6 @@ app.use(cors());
 app.use(express.json()); // Middleware zum Parsen von JSON
 
 // MongoDB-Verbindung
-mongoose.set('bufferCommands', false);
 mongoose.connect('mongodb://127.0.0.1:27017/lichttechnik') 
     .then(() => console.log('MongoDB verbunden'))
     .catch(err => console.error('MongoDB-Verbindungsfehler:', err));

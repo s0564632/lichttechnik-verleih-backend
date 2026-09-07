@@ -23,4 +23,42 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+// POST /api/equipment - Neuen Equipment-Gegenstand erstellen
+router.post('/', async (req, res) => {
+    try {
+        const equipment = new Equipment(req.body);
+        const savedEquipment = await equipment.save();
+        res.status(201).json(savedEquipment);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+});
+
+// PUT /api/equipment/:id - Vorhandenen Equipment-Gegenstand aktualisieren
+router.put('/:id', async (req, res) => {
+    try {
+        const updatedEquipment = await Equipment.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+        if (!updatedEquipment) {
+            return res.status(404).json({ message: 'Ausrüstungsgegenstand nicht gefunden' });
+        }
+        res.json(updatedEquipment);
+    } catch (err) {
+        res.status(400).json({ message: err.message });
+    }
+}); 
+
+// DELETE /api/equipment/:id - Vorhandenen Equipment-Gegenstand löschen
+router.delete('/:id', async (req, res) => {
+    try {
+        const deletedEquipment = await Equipment.findByIdAndDelete(req.params.id);
+        if (!deletedEquipment) {
+            return res.status(404).json({ message: 'Ausrüstungsgegenstand nicht gefunden' });
+        }
+        res.json({ message: 'Ausrüstungsgegenstand erfolgreich gelöscht' });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
 module.exports = router;
+
