@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Equipment = require('../models/Equipment');
 
-// GET /api/equipment - Alle Ausrüstungsgegenstände abrufen
+// GET /api/equipment - Alle Equipmentgegenstände abrufen
 router.get('/', async (req, res) => {
     try {
         const tools = await Equipment.find();
@@ -11,6 +11,8 @@ router.get('/', async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 });
+
+// GET /api/equipment/:id - Einzelnen Equipment-Gegenstand abrufen
 router.get('/:id', async (req, res) => {
     try {
         const item = await Equipment.findById(req.params.id);
@@ -47,7 +49,7 @@ router.put('/:id', async (req, res) => {
     }
 }); 
 
-// PATCH /api/equipment/:id - Equiptment ausleihen
+// PATCH /api/equipment/:id - Equipment ausleihen
 router.patch('/:id/rent', async (req, res) => {
     console.log('PATCH /:id/rent wurde aufgerufen');
     try {
@@ -61,9 +63,8 @@ const item = await Equipment.findById(req.params.id);
             });
 
     }
-
+    // Dekrementieren und speichern
     item.quantity -= 1;
-    
     const updatedItem = await item.save();
     
     res.json(updatedItem);
