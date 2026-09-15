@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const EquipmentSchema = new mongoose.Schema({
   name: { type: String, required: true },
   category: { type: String, required: true },
+  subCategory: { type: String, default: '' },
   lengthValue: { type: Number, default: null }, // Kabel Längen
   lengthUnit: { type: String, default: 'm' },
   quantity: { type: Number, required: true, default: 1 },
