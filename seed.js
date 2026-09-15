@@ -22,7 +22,8 @@ async function seedDatabase() {
       .on('data', (data) => {
         const cleanEquipment = {
             name: data.name.trim(),
-            category: data.category.trim() || 'Unkategorisiert',
+            category: data.category.trim() || 'Zubehör',
+            subcategory: data.subcategory.trim() || '',
             lengthValue: data.lengthValue && data.lengthValue.trim() !== '' ? Number(data.lengthValue) : null,
             lengthUnit: data.lengthUnit.trim() || 'm',
             quantity: Number(data.quantity) || 0,
