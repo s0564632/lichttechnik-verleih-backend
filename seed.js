@@ -1,10 +1,12 @@
+require('dotenv').config();
+
 const fs = require('fs');
 const path = require('path');
 const csv = require('csv-parser');
 const mongoose = require('mongoose');
 const Equipment = require('./models/Equipment');
 
-const DB_URI = 'mongodb://localhost:27017/lichttechnik';
+const DB_URI = process.env.MONGO_URI ||'mongodb://localhost:27017/lichttechnik';
 const CSV_FILE_PATH = path.join(__dirname, 'data', 'techniklisteMitBeschreibung.csv');
 
 async function seedDatabase() {
