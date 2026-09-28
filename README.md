@@ -450,35 +450,37 @@ Die REST-Endpunkte wurden während der Entwicklung mit **\*\*Postman\*\*** getes
 
 Dabei wurden insbesondere folgende Bereiche überprüft:
 
-![get-post.png]\(../../../../../Pictures/webTexh-Screen/800/get-post.png)
+* Abrufen des Equipment-Bestands
 
-\* Abrufen des Equipment-Bestands
+![GET und POST](docs/screenshots/get-post.png)
 
-![Equipment-Bestand]\(../../../../../Pictures/webTexh-Screen/800/apiRequestjk.png)
+* Abrufen einzelner Einträge
 
-\* Abrufen einzelner Einträge
+![Einzelnes Equipment](docs/screenshots/apiRequestjk.png)
 
-![Einzelner Eintrag]\(../../../../../Pictures/webTexh-Screen/800/apiRequestkl.png)
+* Erstellen
 
-\* Erstellen
+![Equipment erstellen](docs/screenshots/postman-testscheinwerfer.png)
 
-![POST-Test]\(../../../../../Pictures/webTexh-Screen/800/postman%20testscheinwerfer.png)
+* Bearbeiten
 
-\* Bearbeiten
+* Löschen
 
-\* Löschen
+* Verleihen
 
-\* Verleihen
+* Fehlerfälle und HTTP-Statuscodes
+
+![GET-Anfrage](docs/screenshots/get.png)
+
+* Validierung von Daten
 
 \* Fehlerfälle und HTTP-Statuscodes
-
-![Fehlerfälle und Statuscodes]\(../../../../../Pictures/webTexh-Screen/800/get.tiff)
 
 \* Validierung von Daten
 
 **## Technische Herausforderungen**
 
-![tsconfig-spec-json-jasmin-hinzugefuegt.png]\(../../../../../Pictures/webTexh-Screen/800/tsconfig-spec-json-jasmin-hinzugefuegt.png)
+![Technische Konfiguration](docs/screenshots/tsconfig-spec-json-jasmin-hinzugefuegt.png)
 
 **### 1. MongoDB unter Debian Trixie**
 
@@ -486,7 +488,7 @@ Bei der Einrichtung des MongoDB Community Servers unter **\*\*Debian Trixie\*\**
 
 Die Fehlermeldung bezog sich auf eine vom Paketmanager abgelehnte Signatur:
 
-![tsconfig-spec-json-jasmin.png]\(../../../../../Pictures/webTexh-Screen/800/tsconfig-spec-json-jasmin.png)
+![MongoDB-Konfiguration](docs/screenshots/tsconfig-spec-json-jasmin.png)
 
 \`\`\`text
 Policy rejected non-revocation signature
